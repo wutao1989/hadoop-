@@ -1,0 +1,16 @@
+server:
+  port: 8001
+
+
+spring:
+  application:
+    name: people
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: wutao123456
+  thymeleaf: #关闭缓存
+    cache: false
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+  type-aliases-package: com.example.entities    # 所有Entity别名类所在包

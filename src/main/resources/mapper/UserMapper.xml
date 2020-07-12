@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dao.UserDao">
+
+<!--    表的列与类成员变量的映射关系-->
+    <resultMap id="BaseResultMap" type="com.example.entities.User">
+        <id column="id" property="id" jdbcType="VARCHAR"/>
+        <id column="name" property="name" jdbcType="VARCHAR"/>
+        <id column="password" property="password" jdbcType="VARCHAR"/>
+    </resultMap>
+
+<!--    查询单个数据-->
+    <select id="selectUserByName" parameterType="String" resultMap="BaseResultMap">
+        select * from user where name = #{name};
+    </select>
+
+
+</mapper>
